@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.1.0",
@@ -16,6 +17,7 @@
     "@nextui-org/theme": "^2.2.3",
     "@prisma/client": "^5.14.0",
     "@stripe/stripe-js": "^3.4.1",
+    "@vercel/postgres": "^0.8.0",
     "framer-motion": "^11.2.5",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
