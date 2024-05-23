@@ -7,7 +7,7 @@ export const plans = [
         isMostPop: false,
         inclusions: [
             {
-                label: "20 Free Credits",
+                label: "30 Free Credits",
                 isIncluded: true,
             },
             {
@@ -19,7 +19,7 @@ export const plans = [
     {
         _id: 2,
         name: "Pro Package",
-        price: 40,
+        price: 19,
         credits: 120,
         isMostPop: true,
         inclusions: [
@@ -36,12 +36,12 @@ export const plans = [
     {
         _id: 3,
         name: "Premium Package",
-        price: 199,
-        credits: 2000,
+        price: 29,
+        credits: 230,
         isMostPop: false,
         inclusions: [
             {
-                label: "2000 Credits",
+                label: "230 Credits",
                 isIncluded: true,
             },
             {
