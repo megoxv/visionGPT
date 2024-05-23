@@ -41,7 +41,7 @@ export const Navbar = () => {
                 )}
 
                 <NavbarItem className="flex gap-2">
-                    <Link isExternal aria-label="Github" href="https://github.com/abdelmjid-saber">
+                    <Link isExternal aria-label="Github" href="https://github.com/megoxv/visionGPT">
                         <GithubIcon className="text-default-500" />
                     </Link>
                     <ThemeSwitch />
