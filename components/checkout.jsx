@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { checkoutCredits } from "@/lib/actions/transaction.action";
 import { Button } from "@nextui-org/react";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 const Checkout = ({ plan, amount, credits, isMostPop }) => {
     const { data: session } = useSession();
@@ -53,14 +53,22 @@ const Checkout = ({ plan, amount, credits, isMostPop }) => {
     return (
         <form action={onCheckout} method="POST" className="w-full">
             <section>
-                <Button
-                    color={isMostPop ? 'secondary' : 'default'}
-                    type="submit"
-                    role="link"
-                    fullWidth
-                >
-                    Buy Credit
-                </Button>
+                {
+                    session ? (
+                        <Button
+                            color={isMostPop ? 'secondary' : 'default'}
+                            type="submit"
+                            role="link"
+                            fullWidth
+                        >
+                            Buy Credit
+                        </Button>
+                    ) : (
+                        <Button onClick={() => signIn()} color="secondary" fullWidth>
+                            Buy Credit
+                        </Button>
+                    )
+                }
             </section>
         </form>
     );

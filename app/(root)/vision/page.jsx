@@ -6,7 +6,7 @@ import { Button, Card, CardBody, CardHeader, Divider, Image } from '@nextui-org/
 import Markdown from 'react-markdown'
 import { updateCredits } from '@/lib/actions/user.actions'
 import { creditFee } from '@/constants'
-import { useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { InsufficientCreditsModal } from '@/components/insufficient-credits-modal'
 
 const Vision = () => {
@@ -156,8 +156,8 @@ const Vision = () => {
 
         if (!session) {
             return (
-                <Button color="secondary" isLoading className="min-[445px]:h-auto">
-                    Loading
+                <Button onClick={() => signIn()} color="secondary" className="min-[445px]:h-auto">
+                    Generate
                 </Button>
             )
         }
