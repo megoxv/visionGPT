@@ -27,16 +27,31 @@ export const authOptions = {
     ],
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
-        async jwt({ token, user }) {
+        async jwt({ token, user, trigger, session }) {
+            if (trigger === "update" && session) {
+                return { ...token, ...session?.user };
+            }
+
             return { ...token, ...user };
         },
         async session({ session, token }) {
-            session.user.id = token.id;
-            session.user.role = token.role;
-            session.user.creditBalance = token.creditBalance;
-            return session;
+            return updateSessionWithUserData(session, token.id);
         },
     },
+};
+
+const updateSessionWithUserData = async (session, userId) => {
+    // Fetch user data
+    const userData = await prisma.user.findUnique({
+        where: { id: userId }
+    });
+
+    // Update session with custom data
+    session.user.id = userData.id;
+    session.user.role = userData.role;
+    session.user.creditBalance = userData.creditBalance;
+
+    return session;
 };
 
 const handler = NextAuth(authOptions);

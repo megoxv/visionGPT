@@ -45,7 +45,6 @@ const Vision = () => {
         setShowInsufficientCreditsModal(false);
         setError('')
 
-
         if (!file) {
             setError('Please select an image')
             return
@@ -180,7 +179,7 @@ const Vision = () => {
 
                 <Divider />
                 <CardBody>
-                    <div className="prose dark:prose-invert max-w-full">
+                    <div className="prose dark:prose-invert text-content1-foreground max-w-full">
                         <Markdown>{response}</Markdown>
                     </div>
                 </CardBody>
