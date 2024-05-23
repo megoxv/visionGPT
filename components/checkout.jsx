@@ -64,7 +64,7 @@ const Checkout = ({ plan, amount, credits, isMostPop }) => {
                             Buy Credit
                         </Button>
                     ) : (
-                        <Button onClick={() => signIn()} color="secondary" fullWidth>
+                        <Button onClick={() => signIn('google')} color="secondary" fullWidth>
                             Buy Credit
                         </Button>
                     )

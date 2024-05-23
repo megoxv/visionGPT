@@ -73,7 +73,7 @@ export const Navbar = () => {
                             </DropdownMenu>
                         </Dropdown>
                     ) : (
-                        <Button onClick={() => signIn()} color="secondary" variant="flat">
+                        <Button onClick={() => signIn('google')} color="secondary" variant="flat">
                             Login
                         </Button>
                     )}

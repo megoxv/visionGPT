@@ -155,7 +155,7 @@ const Vision = () => {
 
         if (!session) {
             return (
-                <Button onClick={() => signIn()} color="secondary" className="min-[445px]:h-auto">
+                <Button onClick={() => signIn('google')} color="secondary" className="min-[445px]:h-auto">
                     Generate
                 </Button>
             )
