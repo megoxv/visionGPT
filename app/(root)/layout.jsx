@@ -3,6 +3,7 @@ import "../globals.css";
 import { Providers } from "../providers";
 import { Navbar } from "@/components/navbar";
 import { BgGradient } from "@/components/bg-gradient";
+import { GoogleAnalytics } from "@/components/google-analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+            <GoogleAnalytics />
             <body className={inter.className}>
                 <Providers>
                     <Navbar />
