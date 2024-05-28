@@ -13,6 +13,9 @@ export const metadata = {
     icons: {
         icon: '/favicon.png',
     },
+    verification: {
+        google: '_IqktHo6oIo2-k8jc95j-_drdPO8K-MK4KHTP4U9VnE',
+    },
 };
 
 export default function RootLayout({ children }) {
